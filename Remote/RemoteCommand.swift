@@ -12,7 +12,7 @@ import Foundation
 // See https://pro-bravia.sony.net/develop/integrate/ircc-ip/ircc-codes/
 
 enum RemoteCommand: String {
-    case power        = "AAAAAQAAAAEAAAAVAw=="
+    case power        = "AAAAAQAAAAEAAAAvAw=="
     case input        = "AAAAAQAAAAEAAAAlAw=="
     case ok           = "AAAAAQAAAAEAAABlAw=="
     case vol_down     = "AAAAAQAAAAEAAAATAw=="
