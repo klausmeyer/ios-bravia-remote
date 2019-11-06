@@ -37,9 +37,20 @@ class Remote {
         request.setValue("\"urn:schemas-sony-com:service:IRCC:1#X_SendIRCC\"", forHTTPHeaderField: "SoapAction")
         request.setValue(psk, forHTTPHeaderField: "X-Auth-PSK")
         
+        #if DEBUG
+        print("--- REQUEST BODY: ---")
+        print(request.debugDescription)
+        #endif
+        
         let task = session.uploadTask(with: request, from: xml.data(using: .utf8)) { data, response, error in
             let httpResponse = response as? HTTPURLResponse
             let success = error == nil && httpResponse != nil && httpResponse!.statusCode < 300
+            
+            #if DEBUG
+            print("--- RESPONSE: ---")
+            print(response.debugDescription)
+            #endif
+            
             completion(success)
         }
         
