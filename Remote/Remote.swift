@@ -39,7 +39,7 @@ class Remote {
         
         #if DEBUG
         print("--- REQUEST BODY: ---")
-        print(request.debugDescription)
+        print(xml)
         #endif
         
         let task = session.uploadTask(with: request, from: xml.data(using: .utf8)) { data, response, error in
