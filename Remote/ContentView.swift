@@ -33,71 +33,71 @@ struct ContentView: View {
             }
             HStack {
                 Button(action: { self.perform(cmd: .vol_down) }) {
-                    Image(systemName: "speaker.1")
+                    Image(systemName: "speaker.1.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .mute) }) {
-                    Image(systemName: "speaker.slash")
+                    Image(systemName: "speaker.slash.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .vol_up) }) {
-                    Image(systemName: "speaker.3")
+                    Image(systemName: "speaker.3.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
             }
             HStack {
                 Button(action: { self.perform(cmd: .num_1) }) {
-                    Text("1")
+                    Image(systemName: "1.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .num_2) }) {
-                    Text("2")
+                    Image(systemName: "2.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .num_3) }) {
-                    Text("3")
+                    Image(systemName: "3.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
             }
             HStack {
                 Button(action: { self.perform(cmd: .num_4) }) {
-                    Text("4")
+                    Image(systemName: "4.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .num_5) }) {
-                    Text("5")
+                    Image(systemName: "5.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .num_6) }) {
-                    Text("6")
+                    Image(systemName: "6.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
             }
             HStack {
                 Button(action: { self.perform(cmd: .num_7) }) {
-                    Text("7")
+                    Image(systemName: "7.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .num_8) }) {
-                    Text("8")
+                    Image(systemName: "8.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .num_9) }) {
-                    Text("9")
+                    Image(systemName: "9.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
             }
             HStack {
                 Button(action: { self.perform(cmd: .channel_down) }) {
-                    Image(systemName: "minus")
+                    Image(systemName: "chevron.down.square.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .num_0) }) {
-                    Text("0")
+                    Image(systemName: "0.circle.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
                 Button(action: { self.perform(cmd: .channel_up) }) {
-                    Image(systemName: "plus")
+                    Image(systemName: "chevron.up.square.fill")
                         .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
                 }
             }
