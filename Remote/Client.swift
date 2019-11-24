@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Remote {
+class Client {
     func perform(cmd: RemoteCommand, completion: @escaping (Bool) -> Void) {
         UserDefaults.standard.synchronize()
         

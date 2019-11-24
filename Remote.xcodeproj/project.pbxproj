@@ -14,7 +14,7 @@
 		FF62AA0D2372150500C41B6C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF62AA0C2372150500C41B6C /* Preview Assets.xcassets */; };
 		FF62AA102372150500C41B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF62AA0E2372150500C41B6C /* LaunchScreen.storyboard */; };
 		FF62AA182372256300C41B6C /* RemoteCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62AA172372256300C41B6C /* RemoteCommand.swift */; };
-		FF62AA1A237227F900C41B6C /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62AA19237227F900C41B6C /* Remote.swift */; };
+		FF62AA1A237227F900C41B6C /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62AA19237227F900C41B6C /* Client.swift */; };
 		FF62AA222372388C00C41B6C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF62AA212372388C00C41B6C /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		FF62AA0F2372150500C41B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF62AA112372150500C41B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF62AA172372256300C41B6C /* RemoteCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCommand.swift; sourceTree = "<group>"; };
-		FF62AA19237227F900C41B6C /* Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
+		FF62AA19237227F900C41B6C /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		FF62AA212372388C00C41B6C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,7 @@
 				FF62AA112372150500C41B6C /* Info.plist */,
 				FF62AA0B2372150500C41B6C /* Preview Content */,
 				FF62AA172372256300C41B6C /* RemoteCommand.swift */,
-				FF62AA19237227F900C41B6C /* Remote.swift */,
+				FF62AA19237227F900C41B6C /* Client.swift */,
 				FF62AA212372388C00C41B6C /* Settings.bundle */,
 			);
 			path = Remote;
@@ -156,7 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF62AA1A237227F900C41B6C /* Remote.swift in Sources */,
+				FF62AA1A237227F900C41B6C /* Client.swift in Sources */,
 				FF62AA042372150400C41B6C /* AppDelegate.swift in Sources */,
 				FF62AA182372256300C41B6C /* RemoteCommand.swift in Sources */,
 				FF62AA062372150400C41B6C /* SceneDelegate.swift in Sources */,

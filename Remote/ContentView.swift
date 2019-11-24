@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var remote = Remote()
+    @State var client = Client()
     @State var showingAlert = false
     
     var body: some View {
@@ -107,7 +107,7 @@ struct ContentView: View {
     }
     
     func perform(cmd: RemoteCommand) {
-        self.remote.perform(cmd: cmd) { success in
+        self.client.perform(cmd: cmd) { success in
             self.showingAlert = !success
         }
     }
