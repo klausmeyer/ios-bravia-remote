@@ -9,106 +9,63 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State var client = Client()
     @State var showingAlert = false
     
+    struct RemoteButton: View {
+        @Binding var showingAlert: Bool
+
+        let image: String;
+        let color: Color;
+        let command: RemoteCommand;
+
+        var body: some View {
+            Button(action: {
+                Client.perform(cmd: self.command) { success in
+                    self.showingAlert = !success
+                }
+            }) {
+                Image(systemName: image)
+                    .font(.largeTitle)
+                    .padding(40)
+                    .foregroundColor(color)
+            }
+        }
+    }
+
     var body: some View {
-        let padding: CGFloat = 30
-       
         return VStack {
             HStack {
-                Button(action: { self.perform(cmd: .power) }) {
-                    Image(systemName: "power")
-                        .font(.largeTitle).padding(padding).foregroundColor(.red)
-                }
-                Button(action: { self.perform(cmd: .input) }) {
-                    Image(systemName: "link")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .ok) }) {
-                    Image(systemName: "checkmark")
-                        .font(.largeTitle).padding(padding).foregroundColor(.green)
-                }
+                RemoteButton(showingAlert: $showingAlert, image: "power", color: .red, command: .power)
+                RemoteButton(showingAlert: $showingAlert, image: "link", color: .blue, command: .input)
+                RemoteButton(showingAlert: $showingAlert, image: "checkmark", color: .green, command: .ok)
             }
             HStack {
-                Button(action: { self.perform(cmd: .vol_down) }) {
-                    Image(systemName: "speaker.1.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .mute) }) {
-                    Image(systemName: "speaker.slash.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .vol_up) }) {
-                    Image(systemName: "speaker.3.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
+                RemoteButton(showingAlert: $showingAlert, image: "speaker.1.fill", color: .blue, command: .vol_down)
+                RemoteButton(showingAlert: $showingAlert, image: "speaker.slash.fill", color: .blue, command: .mute)
+                RemoteButton(showingAlert: $showingAlert, image: "speaker.3.fill", color: .blue, command: .vol_up)
             }
             HStack {
-                Button(action: { self.perform(cmd: .num_1) }) {
-                    Image(systemName: "1.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .num_2) }) {
-                    Image(systemName: "2.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .num_3) }) {
-                    Image(systemName: "3.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
+                RemoteButton(showingAlert: $showingAlert, image: "1.circle.fill", color: .blue, command: .num_1)
+                RemoteButton(showingAlert: $showingAlert, image: "2.circle.fill", color: .blue, command: .num_2)
+                RemoteButton(showingAlert: $showingAlert, image: "3.circle.fill", color: .blue, command: .num_3)
             }
             HStack {
-                Button(action: { self.perform(cmd: .num_4) }) {
-                    Image(systemName: "4.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .num_5) }) {
-                    Image(systemName: "5.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .num_6) }) {
-                    Image(systemName: "6.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
+                RemoteButton(showingAlert: $showingAlert, image: "4.circle.fill", color: .blue, command: .num_4)
+                RemoteButton(showingAlert: $showingAlert, image: "5.circle.fill", color: .blue, command: .num_5)
+                RemoteButton(showingAlert: $showingAlert, image: "6.circle.fill", color: .blue, command: .num_6)
             }
             HStack {
-                Button(action: { self.perform(cmd: .num_7) }) {
-                    Image(systemName: "7.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .num_8) }) {
-                    Image(systemName: "8.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .num_9) }) {
-                    Image(systemName: "9.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
+                RemoteButton(showingAlert: $showingAlert, image: "7.circle.fill", color: .blue, command: .num_7)
+                RemoteButton(showingAlert: $showingAlert, image: "8.circle.fill", color: .blue, command: .num_8)
+                RemoteButton(showingAlert: $showingAlert, image: "9.circle.fill", color: .blue, command: .num_9)
             }
             HStack {
-                Button(action: { self.perform(cmd: .channel_down) }) {
-                    Image(systemName: "chevron.down.square.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .num_0) }) {
-                    Image(systemName: "0.circle.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
-                Button(action: { self.perform(cmd: .channel_up) }) {
-                    Image(systemName: "chevron.up.square.fill")
-                        .font(.largeTitle).padding(padding).foregroundColor(.accentColor)
-                }
+                RemoteButton(showingAlert: $showingAlert, image: "chevron.down.square.fill", color: .blue, command: .channel_down)
+                RemoteButton(showingAlert: $showingAlert, image: "0.circle.fill", color: .blue, command: .num_0)
+                RemoteButton(showingAlert: $showingAlert, image: "chevron.up.square.fill", color: .blue, command: .channel_up)
             }
         }.alert(isPresented: $showingAlert) {
             Alert(title: Text("Oh snap!"), message: Text("Something went wrong"), dismissButton: .default(Text("Got it!")))
-        }
-    }
-    
-    func perform(cmd: RemoteCommand) {
-        self.client.perform(cmd: cmd) { success in
-            self.showingAlert = !success
         }
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Client {
-    func perform(cmd: RemoteCommand, completion: @escaping (Bool) -> Void) {
+    static func perform(cmd: RemoteCommand, completion: @escaping (Bool) -> Void) {
         UserDefaults.standard.synchronize()
         
         let host: String = UserDefaults.standard.string(forKey: "host")!
